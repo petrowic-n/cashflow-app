@@ -9,16 +9,17 @@
     <script type="module" defer src="/src/main.js"></script>
   </head>
   <body class="min-h-screen">
+    <!-- header -->
     <header class="py-4 border-b border-border">
       <div class="container flex items-center justify-between">
         <!-- logo -->
-        <div class="flex items-center gap-2">
+        <div class="flex items-center gap-2 font-jetbrains">
           <div
             class="bg-green w-8.5 h-8.5 rounded-xl flex items-center justify-center"
           >
             💸
           </div>
-          <div class="text-white md:text-2xl text-xl">
+          <div class="text-white font-black md:text-2xl text-xl">
             Budget<span class="text-green">Flow</span>
           </div>
         </div>
@@ -28,6 +29,7 @@
       </div>
     </header>
 
+    <!-- App -->
     <main class="pt-16">
       <!-- Cards -->
       <section>
@@ -120,28 +122,35 @@
         </div>
       </section>
 
+      <!-- Lists -->
       <section class="pt-16">
         <div class="container">
-          <div class="grid grid-cols-3 gap-4">
+          <div class="grid md:grid-cols-3 gap-4">
             <!-- Transactions content -->
-            <article class="bg-surface p-8 col-span-2 rounded-2xl">
-              <div class="flex items-center justify-between">
-                <h4 class="text-text font-bold text-xl">Transactions</h4>
+            <article
+              class="bg-surface p-8 col-span-2 rounded-2xl border border-border"
+            >
+              <div
+                class="md:flex md:items-center md:justify-between border-b border-border pb-8"
+              >
+                <h4 class="text-text font-bold text-xl mb-4 md:mb-0">
+                  Transactions
+                </h4>
                 <!-- All, Incomes, Expenses lists -->
                 <div
-                  class="bg-surface2 p-4 rounded-2xl flex items-center gap-1.5"
+                  class="bg-surface2 p-4 rounded-2xl flex items-center justify-between gap-1.5"
                 >
                   <!-- All -->
                   <div>
                     <span
-                      class="rounded-sm text-text-muted font-medium font-jetbrains py-1.25 px-2.5 cursor-pointer hover:text-text transition-all duration-150 ease-in"
+                      class="rounded-sm text-sm text-text-muted font-medium font-jetbrains py-1.25 px-2.5 cursor-pointer hover:text-text transition-all duration-150 ease-in"
                       >All</span
                     >
                   </div>
                   <!-- Incomes-->
                   <div>
                     <span
-                      class="rounded-sm text-text-muted font-medium font-jetbrains py-1.25 px-2.5 cursor-pointer hover:text-text transition-all duration-150 ease-in"
+                      class="rounded-sm text-sm text-text-muted font-medium font-jetbrains py-1.25 px-2.5 cursor-pointer hover:text-text transition-all duration-150 ease-in"
                       >Incomes</span
                     >
                   </div>
@@ -149,15 +158,68 @@
                   <!-- Expenses-->
                   <div>
                     <span
-                      class="rounded-sm text-text-muted font-medium font-jetbrains py-1.25 px-2.5 cursor-pointer hover:text-text transition-all duration-150 ease-in"
+                      class="rounded-sm text-sm text-text-muted font-medium font-jetbrains py-1.25 px-2.5 cursor-pointer hover:text-text transition-all duration-150 ease-in"
                       >Expenses</span
                     >
                   </div>
                 </div>
               </div>
+
+              <!-- Transaction list -->
+              <div class="mt-8">
+                <div class="flex items-center gap-4 mt-8">
+                  <!-- Arrow -->
+                  <div
+                    class="bg-green-dim flex items-center px-4 py-2 rounded-2xl"
+                  >
+                    <span class="text-text text-xl">↑</span>
+                  </div>
+                  <!-- Content -->
+                  <div>
+                    <h5 class="text-text font-bold font-jetbrains">
+                      Freelance project
+                    </h5>
+                    <div class="flex items-center gap-4 pt-1">
+                      <span class="text-text-muted text-sm">Feb 24</span>
+                      <span
+                        class="bg-surface2 border border-border px-2 text-text-muted text-sm rounded-sm"
+                        >Freelance</span
+                      >
+                    </div>
+                  </div>
+                  <span class="text-green font-jetbrains font-bold ml-auto md:mr-32 mr-16"
+                    >+$2,400</span
+                  >
+                </div>
+
+                <div class="flex items-center gap-4 mt-8">
+                  <!-- Arrow -->
+                  <div
+                    class="bg-red-dim flex items-center px-4 py-2 rounded-2xl"
+                  >
+                    <span class="text-text text-xl">↓</span>
+                  </div>
+                  <!-- Content -->
+                  <div>
+                    <h5 class="text-text font-bold font-jetbrains">
+                      Freelance project
+                    </h5>
+                    <div class="flex items-center gap-4 pt-1">
+                      <span class="text-text-muted text-sm">Feb 24</span>
+                      <span
+                        class="bg-surface2 border border-border px-2 text-text-muted text-sm rounded-sm"
+                        >Freelance</span
+                      >
+                    </div>
+                  </div>
+                  <span class="text-red font-jetbrains font-bold ml-auto md:mr-32 mr-16"
+                    >-$2,400</span
+                  >
+                </div>
+              </div>
             </article>
 
-            <article class="bg-surface p-8 rounded-2xl">
+            <article class="bg-surface p-8 rounded-2xl md:col-span-1 col-span-2">
               <h4 class="text-text font-bold text-xl">By Category</h4>
             </article>
           </div>
