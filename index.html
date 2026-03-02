@@ -25,7 +25,7 @@
         </div>
 
         <!-- header btn -->
-        <button class="btn-add">+ Add transaction</button>
+        <button id="add-transaction" class="btn-add">+ Add transaction</button>
       </div>
     </header>
 
@@ -187,7 +187,8 @@
                       >
                     </div>
                   </div>
-                  <span class="text-green font-jetbrains font-bold ml-auto md:mr-32 mr-16"
+                  <span
+                    class="text-green font-jetbrains font-bold ml-auto md:mr-32 mr-16"
                     >+$2,400</span
                   >
                 </div>
@@ -212,19 +213,112 @@
                       >
                     </div>
                   </div>
-                  <span class="text-red font-jetbrains font-bold ml-auto md:mr-32 mr-16"
+                  <span
+                    class="text-red font-jetbrains font-bold ml-auto md:mr-32 mr-16"
                     >-$2,400</span
                   >
                 </div>
               </div>
             </article>
 
-            <article class="bg-surface p-8 rounded-2xl md:col-span-1 col-span-2">
+            <article
+              class="bg-surface p-8 rounded-2xl md:col-span-1 col-span-2"
+            >
               <h4 class="text-text font-bold text-xl">By Category</h4>
             </article>
           </div>
         </div>
       </section>
+
+      <!-- Modal -->
+      <div id="modal" class="hidden">
+        <div
+          class="fixed top-0 bottom-0 left-0 right-0 flex items-center justify-center z-100 bg-[#00000088] backdrop-blur-xs"
+        >
+          <div
+            class="modal__form fixed bg-surface border border-border rounded-2xl p-8 w-full max-w-105"
+          >
+            <h3 class="text-text text-xl font-bold tracking-[-0.5px]">
+              New Transaction
+            </h3>
+            <!-- Transaction modal type button -->
+            <div class="grid grid-cols-2 gap-4 mt-4">
+              <button
+                class="border border-border rounded-2xl py-4 text-text-muted font-jetbrains font-bold text-sm tracking-[-0.5px] cursor-pointer"
+              >
+                ↑ Income
+              </button>
+              <button
+                class="border border-border rounded-2xl py-4 text-text-muted font-jetbrains font-bold text-sm tracking-[-0.5px] cursor-pointer"
+              >
+                ↓ Expense
+              </button>
+            </div>
+            <!-- Transaction modal form -->
+            <form class="form mt-4">
+              <div>
+                <label
+                  for="description"
+                  class="font-jetbrains text-text-muted uppercase text-sm tracking-widest"
+                  >Description</label
+                >
+                <input
+                  class="block w-full mt-1 bg-surface2 border border-border px-4 py-2 rounded-xl text-text placeholder:text-text-muted outline-0 focus:border-green transition-all duration-200 ease-in"
+                  type="text"
+                  name="description"
+                  placeholder="e.g. Salary"
+                />
+              </div>
+              <div class="grid grid-cols-2 mt-4 gap-4">
+                <div>
+                  <label
+                    for="amount"
+                    class="font-jetbrains text-text-muted uppercase text-sm tracking-widest"
+                    >Amount ($)</label
+                  >
+                  <input
+                    class="block w-full mt-1 bg-surface2 border border-border px-4 py-2 rounded-xl text-text placeholder:text-text-muted outline-0 focus:border-green transition-all duration-200 ease-in"
+                    type="text"
+                    name="amount"
+                    placeholder="0.00"
+                  />
+                </div>
+
+                <div>
+                  <label
+                    for="source"
+                    class="font-jetbrains text-text-muted uppercase text-sm tracking-widest"
+                    >Source</label
+                  >
+                  <input
+                    class="block w-full mt-1 bg-surface2 border border-border px-4 py-2 rounded-xl text-text placeholder:text-text-muted outline-0 focus:border-green transition-all duration-200 ease-in"
+                    type="text"
+                    name="source"
+                    placeholder="Salary"
+                  />
+                </div>
+              </div>
+
+              <!-- Add & Cancel Form buttons-->
+              <div class="grid grid-cols-3 gap-4 mt-8">
+                <!-- Cancel button -->
+                <button
+                  id="cancel-btn"
+                  class="border border-border rounded-2xl py-4 text-text-muted font-bold text-sm tracking-[-0.5px] cursor-pointer hover:bg-surface2 hover:text-text transition-all duration-200 ease-in"
+                >
+                  Cancel
+                </button>
+                <!-- Add transaction button -->
+                <button
+                  class="btn-add col-span-2 flex items-center justify-center"
+                >
+                  Save Transaction
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </main>
   </body>
 </html>
