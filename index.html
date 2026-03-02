@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>cashflow</title>
+    <link href="/src/style.css" rel="stylesheet" />
+    <script type="module" defer src="/src/main.js"></script>
+  </head>
+  <body class="min-h-screen">
+    <header class="py-4 border-b border-border">
+      <div class="container flex items-center justify-between">
+        <!-- logo -->
+        <div class="flex items-center gap-2">
+          <div
+            class="bg-green w-8.5 h-8.5 rounded-xl flex items-center justify-center"
+          >
+            💸
+          </div>
+          <div class="text-white md:text-2xl text-xl">
+            Budget<span class="text-green">Flow</span>
+          </div>
+        </div>
+
+        <!-- header btn -->
+        <button class="btn-add">+ Add transaction</button>
+      </div>
+    </header>
+
+    <main class="pt-16">
+      <!-- Cards -->
+      <section>
+        <div class="container">
+          <div class="grid md:grid-cols-3 gap-4">
+            <!-- Total income card -->
+            <article
+              class="bg-surface border border-t-green border-border p-8 rounded-2xl hover:border-t-green hover:border-border-bright transition-all duration-150 ease-in cursor-pointer"
+            >
+              <h4
+                class="text-text-muted font-medium text-lg mb-8 uppercase font-jetbrains tracking-[.5em] md:text-center text-baseline"
+              >
+                Total income
+              </h4>
+              <span
+                class="text-green font-bold md:text-6xl text-5xl font-jetbrains flex items-center md:justify-center"
+                >$6800</span
+              >
+              <div
+                class="flex items-end gap-2 mt-8 md:justify-center justify-baseline"
+              >
+                <div class="bg-green-dim w-6" style="height: 40px"></div>
+                <div class="bg-green-dim w-6" style="height: 65px"></div>
+                <div class="bg-green-dim w-6" style="height: 50px"></div>
+                <div class="bg-green-dim w-6" style="height: 80px"></div>
+                <div class="bg-green-dim w-6" style="height: 60px"></div>
+                <div class="bg-green-dim w-6" style="height: 70px"></div>
+                <div class="bg-green-dim w-6" style="height: 80px"></div>
+                <div class="bg-green-dim w-6" style="height: 90px"></div>
+                <div class="bg-green w-6" style="height: 100px"></div>
+              </div>
+            </article>
+
+            <!-- Total expenses card -->
+            <article
+              class="bg-surface border border-t-red border-border p-8 rounded-2xl hover:border-t-red hover:border-border-bright transition-all duration-150 ease-in cursor-pointer"
+            >
+              <h4
+                class="text-text-muted font-medium text-lg mb-8 uppercase font-jetbrains tracking-[.5em] md:text-center text-baseline"
+              >
+                Total expenses
+              </h4>
+              <span
+                class="text-red font-bold md:text-6xl text-5xl font-jetbrains flex items-center md:justify-center"
+                >$3350</span
+              >
+              <div
+                class="flex items-end gap-2 mt-8 md:justify-center justify-baseline"
+              >
+                <div class="bg-red-dim w-6" style="height: 40px"></div>
+                <div class="bg-red-dim w-6" style="height: 65px"></div>
+                <div class="bg-red-dim w-6" style="height: 50px"></div>
+                <div class="bg-red-dim w-6" style="height: 80px"></div>
+                <div class="bg-red-dim w-6" style="height: 60px"></div>
+                <div class="bg-red-dim w-6" style="height: 70px"></div>
+                <div class="bg-red-dim w-6" style="height: 80px"></div>
+                <div class="bg-red-dim w-6" style="height: 90px"></div>
+                <div class="bg-red w-6" style="height: 100px"></div>
+              </div>
+            </article>
+
+            <!-- Total expenses card -->
+            <article
+              class="bg-surface border border-t-green border-border p-8 rounded-2xl hover:border-t-green hover:border-border-bright transition-all duration-150 ease-in cursor-pointer"
+            >
+              <h4
+                class="text-text-muted font-medium text-lg mb-8 uppercase font-jetbrains tracking-[.5em] md:text-center text-baseline"
+              >
+                Net balance
+              </h4>
+              <span
+                class="text-green font-bold md:text-6xl text-5xl font-jetbrains flex items-center md:justify-center"
+                >$5077</span
+              >
+              <div
+                class="flex items-end gap-2 mt-8 md:justify-center justify-baseline"
+              >
+                <div class="bg-green-dim w-6" style="height: 40px"></div>
+                <div class="bg-green-dim w-6" style="height: 65px"></div>
+                <div class="bg-green-dim w-6" style="height: 50px"></div>
+                <div class="bg-green-dim w-6" style="height: 80px"></div>
+                <div class="bg-green-dim w-6" style="height: 60px"></div>
+                <div class="bg-green-dim w-6" style="height: 70px"></div>
+                <div class="bg-green-dim w-6" style="height: 80px"></div>
+                <div class="bg-green-dim w-6" style="height: 90px"></div>
+                <div class="bg-green w-6" style="height: 100px"></div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="pt-16">
+        <div class="container">
+          <div class="grid grid-cols-3 gap-4">
+            <!-- Transactions content -->
+            <article class="bg-surface p-8 col-span-2 rounded-2xl">
+              <div class="flex items-center justify-between">
+                <h4 class="text-text font-bold text-xl">Transactions</h4>
+                <!-- All, Incomes, Expenses lists -->
+                <div
+                  class="bg-surface2 p-4 rounded-2xl flex items-center gap-1.5"
+                >
+                  <!-- All -->
+                  <div>
+                    <span
+                      class="rounded-sm text-text-muted font-medium font-jetbrains py-1.25 px-2.5 cursor-pointer hover:text-text transition-all duration-150 ease-in"
+                      >All</span
+                    >
+                  </div>
+                  <!-- Incomes-->
+                  <div>
+                    <span
+                      class="rounded-sm text-text-muted font-medium font-jetbrains py-1.25 px-2.5 cursor-pointer hover:text-text transition-all duration-150 ease-in"
+                      >Incomes</span
+                    >
+                  </div>
+
+                  <!-- Expenses-->
+                  <div>
+                    <span
+                      class="rounded-sm text-text-muted font-medium font-jetbrains py-1.25 px-2.5 cursor-pointer hover:text-text transition-all duration-150 ease-in"
+                      >Expenses</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="bg-surface p-8 rounded-2xl">
+              <h4 class="text-text font-bold text-xl">By Category</h4>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
