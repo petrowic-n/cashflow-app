@@ -166,59 +166,7 @@
               </div>
 
               <!-- Transaction list -->
-              <div class="mt-8">
-                <div class="flex items-center gap-4 mt-8">
-                  <!-- Arrow -->
-                  <div
-                    class="bg-green-dim flex items-center px-4 py-2 rounded-2xl"
-                  >
-                    <span class="text-text text-xl">↑</span>
-                  </div>
-                  <!-- Content -->
-                  <div>
-                    <h5 class="text-text font-bold font-jetbrains">
-                      Freelance project
-                    </h5>
-                    <div class="flex items-center gap-4 pt-1">
-                      <span class="text-text-muted text-sm">Feb 24</span>
-                      <span
-                        class="bg-surface2 border border-border px-2 text-text-muted text-sm rounded-sm"
-                        >Freelance</span
-                      >
-                    </div>
-                  </div>
-                  <span
-                    class="text-green font-jetbrains font-bold ml-auto md:mr-32 mr-16"
-                    >+$2,400</span
-                  >
-                </div>
-
-                <div class="flex items-center gap-4 mt-8">
-                  <!-- Arrow -->
-                  <div
-                    class="bg-red-dim flex items-center px-4 py-2 rounded-2xl"
-                  >
-                    <span class="text-text text-xl">↓</span>
-                  </div>
-                  <!-- Content -->
-                  <div>
-                    <h5 class="text-text font-bold font-jetbrains">
-                      Freelance project
-                    </h5>
-                    <div class="flex items-center gap-4 pt-1">
-                      <span class="text-text-muted text-sm">Feb 24</span>
-                      <span
-                        class="bg-surface2 border border-border px-2 text-text-muted text-sm rounded-sm"
-                        >Freelance</span
-                      >
-                    </div>
-                  </div>
-                  <span
-                    class="text-red font-jetbrains font-bold ml-auto md:mr-32 mr-16"
-                    >-$2,400</span
-                  >
-                </div>
-              </div>
+              <div id="transaction-list-container" class="mt-8"></div>
             </article>
 
             <article
@@ -244,18 +192,20 @@
             <!-- Transaction modal type button -->
             <div class="grid grid-cols-2 gap-4 mt-4">
               <button
-                class="border border-border rounded-2xl py-4 text-text-muted font-jetbrains font-bold text-sm tracking-[-0.5px] cursor-pointer"
+                data-type="income"
+                class="income-btn--active type-btn border border-border rounded-2xl py-4 text-text-muted font-jetbrains font-bold text-sm tracking-[-0.5px] cursor-pointer"
               >
                 ↑ Income
               </button>
               <button
-                class="border border-border rounded-2xl py-4 text-text-muted font-jetbrains font-bold text-sm tracking-[-0.5px] cursor-pointer"
+                data-type="expense"
+                class="type-btn border border-border rounded-2xl py-4 text-text-muted font-jetbrains font-bold text-sm tracking-[-0.5px] cursor-pointer"
               >
                 ↓ Expense
               </button>
             </div>
             <!-- Transaction modal form -->
-            <form class="form mt-4">
+            <form id="form" class="form mt-4">
               <div>
                 <label
                   for="description"
@@ -263,7 +213,8 @@
                   >Description</label
                 >
                 <input
-                  class="block w-full mt-1 bg-surface2 border border-border px-4 py-2 rounded-xl text-text placeholder:text-text-muted outline-0 focus:border-green transition-all duration-200 ease-in"
+                  id="desc-input"
+                  class="block w-full mt-1 bg-surface2 border border-border px-4 py-2 rounded-xl text-text placeholder:text-text-muted outline-0 focus:border-border-bright transition-all duration-200 ease-in"
                   type="text"
                   name="description"
                   placeholder="e.g. Salary"
@@ -277,24 +228,42 @@
                     >Amount ($)</label
                   >
                   <input
-                    class="block w-full mt-1 bg-surface2 border border-border px-4 py-2 rounded-xl text-text placeholder:text-text-muted outline-0 focus:border-green transition-all duration-200 ease-in"
+                    id="amount-input"
+                    class="block w-full mt-1 bg-surface2 border border-border px-4 py-2 rounded-xl text-text placeholder:text-text-muted outline-0 focus:border-border-bright transition-all duration-200 ease-in"
                     type="text"
                     name="amount"
                     placeholder="0.00"
                   />
                 </div>
 
-                <div>
+                <div class="source-container">
                   <label
                     for="source"
                     class="font-jetbrains text-text-muted uppercase text-sm tracking-widest"
                     >Source</label
                   >
                   <input
-                    class="block w-full mt-1 bg-surface2 border border-border px-4 py-2 rounded-xl text-text placeholder:text-text-muted outline-0 focus:border-green transition-all duration-200 ease-in"
+                    id="source-input"
+                    class="block w-full mt-1 bg-surface2 border border-border px-4 py-2 rounded-xl text-text placeholder:text-text-muted outline-0 focus:border-border-bright transition-all duration-200 ease-in"
                     type="text"
                     name="source"
                     placeholder="Salary"
+                  />
+                </div>
+
+                <div class="hidden category-container">
+                  <label
+                    for="category"
+                    class="font-jetbrains text-text-muted uppercase text-sm tracking-widest"
+                    >Source</label
+                  >
+                  <input
+                    id="category-input"
+                    id="source-input"
+                    class="block w-full mt-1 bg-surface2 border border-border px-4 py-2 rounded-xl text-text placeholder:text-text-muted outline-0 focus:border-border-bright transition-all duration-200 ease-in"
+                    type="text"
+                    name="category"
+                    placeholder="Category"
                   />
                 </div>
               </div>
@@ -303,6 +272,7 @@
               <div class="grid grid-cols-3 gap-4 mt-8">
                 <!-- Cancel button -->
                 <button
+                  type="button"
                   id="cancel-btn"
                   class="border border-border rounded-2xl py-4 text-text-muted font-bold text-sm tracking-[-0.5px] cursor-pointer hover:bg-surface2 hover:text-text transition-all duration-200 ease-in"
                 >
@@ -310,6 +280,7 @@
                 </button>
                 <!-- Add transaction button -->
                 <button
+                  type="submit"
                   class="btn-add col-span-2 flex items-center justify-center"
                 >
                   Save Transaction

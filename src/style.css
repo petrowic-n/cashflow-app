@@ -22,7 +22,6 @@
   --yellow: #ffd166;
 }
 
-
 html {
   scroll-behavior: smooth;
 }
@@ -75,7 +74,7 @@ body::after {
   --color-blue: var(--blue);
   --color-purple: var(--purple);
   --color-yellow: var(--yellow);
-  --font-jetbrains: 'JetBrains Mono', sans-serif;
+  --font-jetbrains: "JetBrains Mono", sans-serif;
 }
 
 /* container */
@@ -136,4 +135,14 @@ body::after {
 .btn-add:hover {
   transform: translateY(-1px);
   box-shadow: 0 4px 30px var(--green-glow);
+}
+
+.income-btn--active {
+  border: 1px solid var(--green);
+  color: var(--green);
+}
+
+.expense-btn--active {
+  border: 1px solid var(--red);
+  color: var(--red);
 }
