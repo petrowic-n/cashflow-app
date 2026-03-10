@@ -146,3 +146,13 @@ body::after {
   border: 1px solid var(--red);
   color: var(--red);
 }
+
+.tx-delete {
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+/* show on hover of the parent item */
+.transaction-item:hover .tx-delete {
+  opacity: 1;
+}

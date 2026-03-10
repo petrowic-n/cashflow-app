@@ -45,8 +45,9 @@
                 Total income
               </h4>
               <span
+              id="income"
                 class="text-green font-bold md:text-6xl text-5xl font-jetbrains flex items-center md:justify-center"
-                >$6800</span
+                >$0</span
               >
               <div
                 class="flex items-end gap-2 mt-8 md:justify-center justify-baseline"
@@ -73,8 +74,9 @@
                 Total expenses
               </h4>
               <span
+                id="expenses"
                 class="text-red font-bold md:text-6xl text-5xl font-jetbrains flex items-center md:justify-center"
-                >$3350</span
+                >$0</span
               >
               <div
                 class="flex items-end gap-2 mt-8 md:justify-center justify-baseline"
@@ -101,8 +103,9 @@
                 Net balance
               </h4>
               <span
+                id="balance"
                 class="text-green font-bold md:text-6xl text-5xl font-jetbrains flex items-center md:justify-center"
-                >$5077</span
+                >$0</span
               >
               <div
                 class="flex items-end gap-2 mt-8 md:justify-center justify-baseline"
@@ -125,7 +128,7 @@
       <!-- Lists -->
       <section class="pt-16">
         <div class="container">
-          <div class="grid md:grid-cols-3 gap-4">
+          <div class="grid md:grid-cols-2 gap-4">
             <!-- Transactions content -->
             <article
               class="bg-surface p-8 col-span-2 rounded-2xl border border-border"
@@ -167,12 +170,6 @@
 
               <!-- Transaction list -->
               <div id="transaction-list-container" class="mt-8"></div>
-            </article>
-
-            <article
-              class="bg-surface p-8 rounded-2xl md:col-span-1 col-span-2"
-            >
-              <h4 class="text-text font-bold text-xl">By Category</h4>
             </article>
           </div>
         </div>
